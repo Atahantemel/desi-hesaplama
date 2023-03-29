@@ -1,0 +1,1516 @@
+
+<!doctype html>
+<html itemtype="http://schema.org/WebPage" lang="tr">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152950494-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152950494-2');
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&amp;subset=latin-ext" rel="stylesheet">
+<style>
+	html {
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+.malzemeSecenek{
+	display: none !important;
+}
+.footer a:hover{
+	color: #77091c !important
+}
+	body {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		padding-bottom: 6rem;
+		min-height: 100%;
+		font-family: 'Roboto', sans-serif !important;
+		background: #fff !important;
+		color: #222 !important;
+		font-size: 12px !important
+	}
+
+	body .pushable> .pusher {
+		background: #e9ebee;
+	}
+
+	a {
+		outline: 0;
+		text-decoration: none;
+		font-size: 11px !important;
+		font-weight: bold;
+		color: #676767;
+	}
+
+	h1 {
+		font-family: 'Roboto', sans-serif !important;
+		font-size: 1.50em;
+		color: #676767;
+		font-weight: 600;
+		margin-top: 7px;
+		letter-spacing: -0.01em;
+	}
+
+	.bold-text {
+		font-weight: bold;
+	}
+
+	.gizle {
+		visibility: hidden
+	}
+
+	.goster {
+		visibility: visible
+	}
+	.hesap_alan {
+		position: relative;
+		border-radius: 10px;
+		box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+		background: rgb(255, 255, 255);
+		background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(229, 229, 229, 1) 100%);
+		filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0);
+	}
+
+	.hesap_alan:before {
+		content: "";
+		position: absolute;
+		bottom: -33px;
+		left: 0;
+		background: url(varliklar/img/altGolge.png);
+		width: 500px;
+		height: 33px;
+	}
+
+	.baslik {
+		padding: 29px 40px;
+		position: relative;
+		font-weight: bold;
+		text-align: left;
+		height: 100px;
+		border-bottom: 1px solid #ddd;
+	}
+.ui.primary.button, .ui.primary.buttons .button {
+	background: rgb(113,2,20) !important;
+	background: linear-gradient(0deg, rgba(113,2,20,1) 0%, rgba(127,18,39,1) 100%)!important;
+}
+	.baslik span {
+		position: relative;
+		font-size: 14px;
+		font-weight: bolder;
+		color: #7f1227;
+	}
+
+	.baslik span:after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		top: 18px;
+		left: 0;
+		background: #7f1227;
+	}
+
+	.secenek {
+		display: flex;
+		border-bottom: 1px solid #ddd;
+	}
+
+	.secenek:hover {
+		background: rgba(230, 230, 230, 0.4);
+	}
+
+	.secenek:hover .s1 {
+		font-weight: bold;
+	}
+
+	.s1 {
+		width: 35%;
+		padding-left: 40px;
+		text-align: left;
+		font-size: 13px;
+		color: #676767;
+		font-weight: bold;
+		height: 80px;
+		line-height: 81px;
+	}
+
+	.s2 {
+		width: 65%;
+		text-align: left;
+		height: 80px;
+		line-height: 80px;
+	}
+
+	.hesap_sekil {
+		flex: 1;
+		order: 1
+	}
+
+	.hesap_alan {
+		flex: 2;
+		order: 2;
+		max-width: 500px;
+		min-width: 500px
+	}
+
+	.hesap_menu {
+		flex: 1;
+		order: 3;
+		text-align: left
+	}
+
+	.hesap_menu ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	.hesap_menu li {
+		list-style: none;
+	}
+
+	.hesap_menu li a {
+		border-left: 4px solid transparent;
+		padding: 10px;
+		font-size: 15px !important;
+		font-weight: bold;
+		color: #000;
+		display: block;
+		transition: background-color 0.25s ease-out;
+		background-color: transparent;
+	}
+
+	.hesap_menu li a:hover {
+		background: #a15557;
+	}
+
+	.hesap_menu li a.aktif {
+		border-left: 8px solid #3a000b;
+		font-weight: bolder;
+	}
+
+	#liste {
+		position: absolute;
+    right: 10px;
+	}
+
+	#sideListe {
+		max-width: 960px;
+		min-width: 750px;
+		width: 90%;
+	}
+
+	.sekil {
+		position: relative;
+		width: 300px;
+		float: right;
+	}
+
+	.sekil span {
+		position: absolute;
+		width: 100%;
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+	}
+
+	.hesapla {
+		text-align: left;
+		padding: 40px 20px;
+	}
+
+	.yorum {
+		width: 70%;
+		margin: 50px auto;
+		margin-bottom: -40px;
+	}
+
+	.sonuc {
+		background: #ffffff;
+		border-bottom: 1px solid #ddd;
+		height: 0px;
+	}
+
+	.t1 {
+		display: flex;
+		width: 100%;
+		flex-wrap: wrap;
+		height: 120px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.t2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	.k1 {
+		width: 50%;
+		height: 100%;
+	}
+
+	.k1:last-child {
+		border-left: 1px solid #ddd;
+	}
+
+	.i0 {
+		color: #676767;
+		font-size: 11px;
+		font-weight: 100;
+		height: 20px;
+	}
+
+	.i1 {
+		font-size: 20px;
+		font-weight: bold;
+		color: #7f1227;
+		height: 20px;
+	}
+
+	.i2 {
+		color: #676767;
+		font-size: 11px;
+		font-weight: bold;
+		height: 20px;
+	}
+
+	.ekle_alan {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+	}
+
+	.hesaplananDegerler {
+		position: relative;
+	}
+	/**********************************************
+
+	MENU ALAN
+
+	**********************************************/
+
+	#cssmenu,
+	#cssmenu ul,
+	#cssmenu ul li,
+	#cssmenu ul li a,
+	#cssmenu #menu-button {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		list-style: none;
+		line-height: 1;
+		display: block;
+		position: relative;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	#cssmenu:after,
+	#cssmenu> ul:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+
+	#cssmenu #menu-button {
+		display: none;
+	}
+
+	#cssmenu {
+		position: relative;
+
+	}
+
+	#menu-line{
+		display: none;
+	}
+
+	#menu-line {
+		position: absolute;
+		bottom: -7px;
+		left: 0;
+		height: 7px;
+		background: #ff8109;
+		-webkit-transition: all 0.25s ease-out;
+		-moz-transition: all 0.25s ease-out;
+		-ms-transition: all 0.25s ease-out;
+		-o-transition: all 0.25s ease-out;
+		transition: all 0.25s ease-out;
+	}
+
+	#cssmenu> ul> li {
+		float: left;
+	}
+
+	#cssmenu.align-center> ul {
+		font-size: 0;
+		text-align: center;
+	}
+
+	#cssmenu.align-center> ul> li {
+		display: inline-block;
+		float: none;
+	}
+
+	#cssmenu.align-center ul ul {
+		text-align: left;
+	}
+
+	#cssmenu.align-right> ul> li {
+		float: right;
+	}
+
+	#cssmenu.align-right ul ul {
+		text-align: right;
+	}
+
+	#cssmenu> ul> li> a {
+		padding: 13px 10px 13px 10px;
+		font-size: 11px !important;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #000;
+		-webkit-transition: color .2s ease;
+		-moz-transition: color .2s ease;
+		-ms-transition: color .2s ease;
+		-o-transition: color .2s ease;
+		transition: color .2s ease;
+	}
+
+	#cssmenu> ul> li:hover> a,
+	#cssmenu> ul> li.active> a {
+		color: #000;
+	}
+
+	#cssmenu> ul> li.has-sub:hover> a::after {
+		border-color: #009ae1;
+		max-height: 1000px;
+		transform: perspective(400) rotate3d(0, 0, 0, 0);
+	}
+
+	#cssmenu ul ul {
+		position: absolute;
+		left: -9999px;
+	}
+
+	#cssmenu li:hover> ul {
+		left: auto;
+		padding: 10px 0;
+		margin-top: -10px;
+	}
+
+	#cssmenu.align-right li:hover> ul {
+		right: 0;
+	}
+
+	#cssmenu ul ul ul {
+		margin-left: 100%;
+		top: 0;
+	}
+
+	#cssmenu.align-right ul ul ul {
+		margin-left: 0;
+		margin-right: 100%;
+	}
+
+	#cssmenu li ul {
+		position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+	}
+
+	#cssmenu ul li:hover ul {
+		max-height: 1000px;
+		transform: perspective(400) rotate3d(0, 0, 0, 0);
+	}
+
+	#cssmenu ul ul li a {
+		padding: 10px 20px;
+		width: 180px;
+		font-size: 12px;
+	    background: #f1f1f1;
+		text-decoration: none;
+		color: #000000;
+		-webkit-transition: color .2s ease;
+		-moz-transition: color .2s ease;
+		-ms-transition: color .2s ease;
+		-o-transition: color .2s ease;
+		transition: color .2s ease;
+	}
+
+	#cssmenu ul ul li:hover> a,
+	#cssmenu ul ul li a:hover {
+		color: #ffffff;
+		background: rgb(113,2,20) !important;
+		background: linear-gradient(0deg, rgba(113,2,20,1) 0%, rgba(127,18,39,1) 100%)!important;
+	}
+
+	#cssmenu ul ul li.has-sub> a::after {
+		position: absolute;
+		top: 13px;
+		right: 10px;
+		width: 4px;
+		height: 4px;
+
+	}
+
+	#cssmenu.align-right ul ul li.has-sub> a::after {
+		right: auto;
+		left: 10px;
+		border-bottom: 0;
+		border-right: 0;
+		border-top: 1px solid #dddddd;
+		border-left: 1px solid #dddddd;
+	}
+
+	#cssmenu ul ul li.has-sub:hover> a::after {
+		border-color: #ffffff;
+	}
+
+	@media all and (max-width: 1023px) {
+		#cssmenu> ul> li> a {
+			font-size: 13px !important;
+		}
+		#cssmenu> ul> li:hover> a,
+		#cssmenu> ul> li.active> a {
+			color: #7f1227;
+			background: #e5e5e5;
+		}
+		#cssmenu ul ul li:hover> a,
+		#cssmenu ul ul li a:hover {
+			color: #176bae;
+			background: #ffffff;
+		}
+		#cssmenu li:hover> ul {
+			left: auto;
+			padding: 0;
+			margin-top: 0;
+		}
+		#cssmenu li ul {
+			top: 0px;
+		}
+		#cssmenu {
+			width: 100%;
+		}
+		#cssmenu ul {
+			width: 100%;
+			display: none;
+			padding-top: 70px;
+		}
+		#cssmenu.align-center> ul,
+		#cssmenu.align-right ul ul {
+			text-align: left;
+		}
+		#cssmenu ul li,
+		#cssmenu ul ul li,
+		#cssmenu ul li:hover> ul> li {
+			width: 100%;
+			height: auto;
+			border-top: 1px solid rgba(120, 120, 120, 0.15);
+		}
+		#cssmenu ul li a,
+		#cssmenu ul ul li a {
+			width: 100%;
+			padding: 20px 30px;
+		}
+		#cssmenu> ul> li,
+		#cssmenu.align-center> ul> li,
+		#cssmenu.align-right> ul> li {
+			float: none;
+			display: block;
+		}
+		#cssmenu ul ul li a {
+			padding: 20px 20px 20px 30px;
+			font-size: 12px;
+			color: #000000;
+			background: white;
+		}
+		#cssmenu ul ul li:hover> a,
+		#cssmenu ul ul li a:hover {
+			color: #000000;
+			background: #e5e5e5;
+		}
+		#cssmenu ul ul ul li a {
+			padding-left: 40px;
+		}
+		#cssmenu ul ul,
+		#cssmenu ul ul ul {
+			position: relative;
+			left: 0;
+			right: auto;
+			width: 100%;
+			margin: 0;
+		}
+		#cssmenu> ul> li.has-sub> a::after,
+		#cssmenu ul ul li.has-sub> a::after {
+			display: none;
+		}
+		#menu-line {
+			display: none;
+		}
+		#cssmenu #menu-button {
+			position: relative;
+	    width: 36px;
+	    height: 33px;
+	    color: #fefefe;
+	    cursor: pointer;
+	    z-index: 500;
+	    right: 30px;
+	    float: right;
+	    border-radius: 4px;
+	    background: #7b0e22;
+	    display: block;
+		}
+		#cssmenu #menu-button::after {
+			content: '';
+			position: absolute;
+			top: 11px;
+			right: 10px;
+			display: block;
+			width: 16px;
+			height: 2px;
+			background: #ffffff;
+		}
+		#cssmenu #menu-button::before {
+			content: '';
+			position: absolute;
+			top: 16px;
+			right: 10px;
+			display: block;
+			width: 16px;
+			height: 7px;
+			border-top: 2px solid #ffffff;
+			border-bottom: 2px solid #ffffff;
+		}
+		#cssmenu .submenu-button {
+			position: absolute;
+			z-index: 10;
+			right: 0;
+			top: 0;
+			display: block;
+			border-left: 1px solid rgba(120, 120, 120, 0.15);
+			height: 52px;
+			width: 52px;
+			cursor: pointer;
+		}
+		#cssmenu .submenu-button::after {
+			content: '';
+			position: absolute;
+			top: 21px;
+			left: 26px;
+			display: block;
+			width: 1px;
+			height: 11px;
+			background: #000000;
+			z-index: 99;
+		}
+		#cssmenu .submenu-button::before {
+			content: '';
+			position: absolute;
+			left: 21px;
+			top: 26px;
+			display: block;
+			width: 11px;
+			height: 1px;
+			background: #000000;
+			z-index: 99;
+		}
+		#cssmenu .submenu-button.submenu-opened:after {
+			display: none;
+		}
+		.navIco {
+			display: none;
+		}
+	}
+
+	.navIco {
+padding-bottom: 10px;
+		text-align: center;
+
+	}
+	/**********************************************
+
+	FAQ
+
+	**********************************************/
+
+	section {
+		margin-bottom: 90px;
+
+	}
+
+	section h1 {
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: normal;
+		letter-spacing: 10px;
+		font-size: 25px;
+		line-height: 1.5;
+	}
+
+	section p,
+	section a {
+		text-align: center;
+		letter-spacing: 3px;
+	}
+
+	p {
+		font-weight: 200;
+		line-height: 2.5;
+		font-size: 14px;
+	}
+
+	.faq {
+		width: 70%;
+		margin: 50px auto;
+	}
+
+	.toggle:last-child {
+		border-bottom: 1px solid #dbdfe4;
+	}
+
+	.toggle .toggle-title {
+		position: relative;
+		display: block;
+		border-top: 1px solid #dbdfe4;
+		margin-bottom: 6px;
+	}
+
+	.toggle .toggle-title h3 {
+		font-size: 20px;
+		margin: 0px;
+		line-height: 1;
+		cursor: pointer;
+		font-weight: 200;
+	}
+
+	.toggle .toggle-inner {
+		padding: 7px 25px 10px 25px;
+
+		margin: -7px 0 6px;
+	}
+
+	.toggle .toggle-inner div {
+		max-width: 100%;
+	}
+
+	.toggle .toggle-title .title-name {
+		display: block;
+		padding: 25px 25px 14px;
+	}
+
+	.toggle .toggle-title a i {
+		font-size: 22px;
+		margin-right: 5px;
+	}
+
+	.toggle .toggle-title i {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		margin: 20px;
+		right: 0;
+	}
+
+	/**********************************************
+
+	TABLE
+
+	**********************************************/
+	table.dosya td {text-align: left;}
+	table {
+		overflow: hidden;
+		width: 70%;
+	}
+
+	th,
+	td {
+		position: relative;
+		font-size: 1em;
+		-webkit-transition: font-size .725s;
+		-moz-transition: font-size .725s;
+		-o-transition: font-size .725s;
+		transition: font-size .725s;
+	}
+
+	th::before,
+	th::after,
+	td::before,
+	td::after {
+		position: absolute;
+		z-index: -1;
+		background: transparent;
+		content: '';
+		pointer-events: none;
+		-webkit-transition: background .05s ease-in-out;
+		transition: background .05s ease-in-out;
+	}
+
+	td:hover {
+		background: rgb(127, 18, 39);
+		    color: white;
+	}
+
+	th::before,
+	td::before {
+		top: 0;
+		bottom: 0;
+		left: -100vw;
+		right: -100vw;
+	}
+
+	th::after,
+	td::after {
+		top: -100vh;
+		bottom: -100vh;
+		left: 0;
+		right: 0;
+	}
+
+	th:hover::before,
+	th:hover::after,
+	td:hover::before,
+	td:hover::after {
+		background: #dbdfe4;
+		font-weight: 700;
+	}
+
+	th:focus::before,
+	th:focus::after,
+	td:focus::before,
+	td:focus::after {
+		z-index: -2;
+		background: #dbdfe4;
+		font-weight: 700;
+	}
+	/* for demo */
+
+	table {
+		margin: 30px auto;
+		border-collapse: collapse;
+		text-align: center;
+	}
+
+	thead {
+		font-size: 1.2em;
+		font-weight: 700;
+	}
+
+	th,
+	td {
+		width: 100% / 6;
+		padding: 1.5em 0.5em;
+		border-bottom: 1px solid #dddddd;
+	}
+
+	th {
+		text-transform: uppercase;
+	}
+
+	tbody th:first-child {
+		text-align: left;
+	}
+
+	#listeBody td:hover {
+		background: none
+	}
+	/**********************************************
+
+	SEMANTIC
+
+	**********************************************/
+	.ui.basic.label {
+		color: #666666;
+	}
+	.ui.secondary.pointing.menu {
+		border: 0px;
+		margin-top: -60px;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+		align-items: flex-start;
+	}
+
+	.ui.secondary.pointing.menu .active.item {
+		border-color: #7f1227;
+		color: rgb(45, 162, 255);
+	}
+
+	.ui.secondary.pointing.menu .active.item:hover {
+		border-color: #7f1227;
+		color: rgb(45, 162, 255);
+	}
+
+	.ui.secondary.pointing.menu .item {
+		font-size: 1.5em !important;
+		border-bottom-width: 5px;
+	}
+
+	.primary {
+		background-color: #7f1227  !important
+	}
+
+	.ui.selection.active.dropdown {
+		border-color: #34a0f9 !important;
+		box-shadow: 0 2px 3px 0 rgba(34, 36, 38, .15);
+	}
+
+	.ui.selection.active.dropdown .menu {
+		border-color: #34a0f9 !important;
+		box-shadow: 0 2px 3px 0 rgba(34, 36, 38, .15);
+	}
+
+	.ui.label {
+		font-weight: 100;
+		font-family: 'Roboto', sans-serif !important;
+		border: 1px solid #dededf;
+		background: white;
+	}
+
+	.ui.form input:not([type]),
+	.ui.form input[type=date],
+	.ui.form input[type=datetime-local],
+	.ui.form input[type=email],
+	.ui.form input[type=file],
+	.ui.form input[type=number],
+	.ui.form input[type=password],
+	.ui.form input[type=search],
+	.ui.form input[type=tel],
+	.ui.form input[type=text],
+	.ui.form input[type=time],
+	.ui.form input[type=url] {
+		font-family: 'Roboto', sans-serif !important;
+	}
+
+	.ui.dropdown>.dropdown.icon {
+		position: absolute;
+		right: 17px;
+	}
+
+	.ui.dropdown {
+		width: 90%;
+	}
+
+	.ui.right.labeled.input {
+		width: 51.25%;
+	}
+
+	.ui.label {
+		width: 75%;
+	}
+	/**********************************************
+
+	LOADİNG
+
+	**********************************************/
+
+	.hesap_sonuc {
+		width: 100%;
+		height: 2px;
+	}
+
+	.loader {
+		height: 100%;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+
+	.loader div:nth-child(1) {
+		-webkit-animation-delay: -0.72s;
+		animation-delay: -0.72s;
+	}
+
+	.loader div:nth-child(2) {
+		-webkit-animation-delay: -0.64s;
+		animation-delay: -0.64s;
+	}
+
+	.loader div:nth-child(3) {
+		-webkit-animation-delay: -0.56s;
+		animation-delay: -0.56s;
+	}
+
+	.loader div:nth-child(4) {
+		-webkit-animation-delay: -0.48s;
+		animation-delay: -0.48s;
+	}
+
+	.loader div:nth-child(5) {
+		-webkit-animation-delay: -0.4s;
+		animation-delay: -0.4s;
+	}
+
+	.loader div:nth-child(6) {
+		-webkit-animation-delay: -0.32s;
+		animation-delay: -0.32s;
+	}
+
+	.loader div:nth-child(7) {
+		-webkit-animation-delay: -0.24s;
+		animation-delay: -0.24s;
+	}
+
+	.loader div:nth-child(8) {
+		-webkit-animation-delay: -0.16s;
+		animation-delay: -0.16s;
+	}
+
+	.loader div:nth-child(9) {
+		-webkit-animation-delay: -0.08s;
+		animation-delay: -0.08s;
+	}
+
+	.loader div:nth-child(10) {
+		-webkit-animation-delay: 0s;
+		animation-delay: 0s;
+	}
+
+	@-webkit-keyframes go {
+		100% {
+			background: transparent;
+			-webkit-box-flex: 10;
+			flex: 10;
+			-webkit-box-shadow: 0 0 0 transparent;
+			box-shadow: 0 0 0 transparent;
+		}
+	}
+
+	@keyframes go {
+		100% {
+			background: transparent;
+			-webkit-box-flex: 10;
+			-ms-flex: 10;
+			flex: 10;
+			-webkit-box-shadow: 0 0 0 transparent;
+			box-shadow: 0 0 0 transparent;
+		}
+	}
+	/**********************************************
+
+	RESPONSIVE
+
+	**********************************************/
+
+	@media screen and (max-width: 1200px) {
+		.footer {
+	    width: 90%;
+	}
+		.logo {
+			padding: 0;
+			width: 52px;
+			background: url(varliklar/img/logo_k.png);
+		}
+		.faq {
+			width: 90%;
+			margin: 50px auto;
+		}
+		table {
+			width: 90%;
+		}
+		.yorum {
+			width: 90%;
+			margin: 40px auto;
+		}
+	}
+
+	@media screen and (max-width: 1023px) {
+		.logo {
+			width: 153px;
+			background: url(varliklar/img/logo.png);
+		}
+		#liste {
+			padding-right: 80px;
+		}
+		.hesap_menu {
+			display: none
+		}
+		.hesap_alan {
+			margin: 10px;
+			float: right;
+		}
+		.faq {
+			width: 100%;
+			margin: 50px auto;
+		}
+		table {
+			width: 100%;
+		}
+		.sekil {
+			width: auto;
+			float: none;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.hesap_alan {
+			margin: 10px auto;
+			float: none;
+		}
+		.hesap_sekil {
+			display: none;
+		}
+		.faq {
+			width: 100%;
+			margin: -50px auto;
+		}
+		.yorum {
+			width: 90%;
+			margin: 100px auto;
+			    margin-bottom: 0;
+		}
+		.footer {
+			margin-top: 20px;
+		}
+	}
+
+	@media screen and (max-width:767px) {
+		.ekle_alan,
+		#liste {
+			display: none
+		}
+	}
+
+	@media screen and (max-width: 550px) {
+		.hesap_alan {
+			margin: 0px auto;
+			float: none;
+			width: 100%;
+			box-shadow: none;
+			border-radius: 0;
+			min-width: unset;
+			max-width: unset;
+		}
+		.hesap_kapsayici {
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.baslik {
+			background: #7f1227;
+			padding: 20px;
+			height: auto !important;
+			margin-top: -7px;
+		}
+		.baslik span {
+			display: none;
+			color: #7f1227;
+		}
+		.baslik span:after {
+			background: #7f1227;
+		}
+		h1 {
+			color: aliceblue;
+			font-size: 12px;
+			margin: 0px;
+		}
+		.hesap_alan:before {
+			background: none;
+		}
+		.s1 {
+			font-size: 11px;
+			padding-left: 20px;
+		}
+		.ui.mini.vertical.buttons {
+			display: none
+		}
+		.faq {
+			margin: 0px auto;
+		}
+		.s1 {
+			height: 60px;
+			line-height: 60px;
+
+		}
+		.s2 {
+			height: 60px;
+			line-height: 60px;
+
+		}
+	}
+	#menu-line{
+		    background: #676767;
+	}
+	.reklam{
+		position: relative;
+    z-index: 1;
+    height: 115px;
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to top, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to top, #FFFFFF, #ECE9E6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+	}
+	@media only screen and (max-width: 960px) {
+  .reklam {
+    display: none
+
+  }
+}
+
+
+@media only screen and (max-width: 1279px) {
+.ustTaraf{
+	justify-content: flex-end;padding-right: 120px;
+}
+}
+@media only screen and (max-width: 1040px) {
+.ustTaraf{
+padding: 40px 0;    align-items: flex-start;
+}
+.logoTaraf {
+
+    top: 23px;
+}
+}
+</style>
+</head>
+<body>
+<div class="hesap_alan">
+		<div class="baslik">
+			<span>KUTU PROFİL</span>
+			<h1>KARE KUTU PROFİL AĞIRLIK ve FİYAT HESAPLAMA</h1>
+		</div>
+		<div id="form" class="ui big form">
+			<div class="secenek">
+				<div class="s1">EBAT</div>
+				<div class="s2">
+					<select class="ui dropdown kpk_se">
+						<option value="1" selected data-kalinlik="0.6,0.7,0.8,0.9,1.0,1.2" data-agirlik="0.17,0.20,0.23,0.25,0.28,0.32">10 x 10</option>
+						<option value="2" data-kalinlik="0.6,0.7,0.8,0.9,1.0,1.2,1.5" data-agirlik="0.27,0.31,0.35,0.39,0.43,0.52,0.63">15 x 15</option>
+						<option value="3" data-kalinlik="0.6,0.7,0.8,0.9,1.0,1.2,1.5,2.0" data-agirlik="0.36,0.42,0.48,0.54,0.59,0.70,0.86,1.12">20 x 20</option>
+						<option value="4" data-kalinlik="0.7,0.8,0.9,1.0,1.2,1.5,2.0,2.5,3" data-agirlik="0.53,0.60,0.68,0.75,0.89,1.10,1.44,1.89,1.90">25 x 25</option>
+						<option value="5" data-kalinlik="0.7,0.8,0.9,1.0,1.2,1.5,2.0,2.5,3" data-agirlik="0.64,0.73,0.82,0.90,1.08,1.34,1.75,2.15,2.39">30 x 30</option>
+						<option value="6" data-kalinlik="0.8,0.9,1.0,1.2,1.5,2.0,2.5,3" data-agirlik="0.85,0.97,1.07,1.27,1.57,2.07,2.54,2.86">35 x 35</option>
+						<option value="7" data-kalinlik="0.8,0.9,1.0,1.2,1.5,2.0,2.5,3,4" data-agirlik="0.97,1.09,1.21,1.44,1.81,2.38,2.93,3.33,4.09">40 x 40</option>
+						<option value="8" data-kalinlik="1.2,1.5,2.0,2.5,3,4,5" data-agirlik="1.84,2.28,3.01,3.72,4.28,5.51,6.56">50 x 50</option>
+						<option value="9" data-kalinlik="1.5,2.0,2.5,3,4,5" data-agirlik="2.75,3.64,4.50,5.22,6.76,8.13">60 x 60</option>
+						<option value="10" data-kalinlik="1.5,2.0,2.5,3,4,5" data-agirlik="3.23,4.26,5.29,6.16,8.02,9.70">70 x 70</option>
+						<option value="11" data-kalinlik="1.5,2.0,2.5,3,4,5,6,6.3" data-agirlik="3.62,4.89,6.07,7.10,9.28,11.30,13.20,13.50">80 x 80</option>
+						<option value="12" data-kalinlik="1.5,2.0,2.5,3,4,5,6,6.3" data-agirlik="4.08,5.52,6.86,8.04,10.50,12.80,15.10,15.50">90 x 90</option>
+						<option value="13" data-kalinlik="2.0,2.5,3,4,5,6,6.3,7.1,8" data-agirlik="6.15,7.64,8.99,11.70,14.20,17.0,17.50,19.40,21.40">100 x 100</option>
+						<option value="14" data-kalinlik="3,4,5,6,6.3,7.1,8" data-agirlik="10.80,14.20,17.40,20.70,21.40,23.80,26.40">120 x 120</option>
+						<option value="15" data-kalinlik="4,5,6,6.3,7.1,8" data-agirlik="16.80,20.50,24.50,25.40,28.30,31.40">140 x 140</option>
+						<option value="16" data-kalinlik="4,5,6,6.3,7.1,8" data-agirlik="18.00,22.10,26.40,27.40,30.50,33.90">150 x 150</option>
+						<option value="17" data-kalinlik="4,5,6,6.3,7.1,8" data-agirlik="19.20,23.80,28.30,29.30,32.70,36.50">160 x 160</option>
+						<option value="18" data-kalinlik="4,5,6,6.3,7.1,8" data-agirlik="21.80,26.80,32.10,33.30,37.20,41.50">180 x 180</option>
+						<option value="19" data-kalinlik="4,5,6,6.3,7.1,8" data-agirlik="24.20,29.90,35.80,37.20,41.60,46.50">200 x 200</option>
+						<option value="20" data-kalinlik="5,6,6.3,7.1,8" data-agirlik="33.20,39.60,41.20,46.10,51.50">220 x 220</option>
+						<option value="21" data-kalinlik="5,6,6.3,7.1,8" data-agirlik="38.30,45.20,47.90,53.70,60.30">250 x 250</option>
+						<option value="22" data-kalinlik="6,6.3,7.1,8" data-agirlik="47.10,49.10,56.00,61.60">260 x 260</option>
+						<option value="23" data-kalinlik="6,6.3,7.1,8" data-agirlik="55.10,57.80,64.90,72.80">300 x 300</option>
+						<option value="24" data-kalinlik="6.3,7.1,8" data-agirlik="66.90,75.10,84.20">350 x 350</option>
+						<option value="25" data-kalinlik="8," data-agirlik="96.70">400 x 400</option>
+					</select>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">KALINLIK</div>
+				<div class="s2">
+					<div class="ui selection dropdown kpk_sk">
+						<i class="dropdown icon"></i>
+						<div class="text">Seç</div>
+						<div class="menu">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">BOY</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" id="malzemeBoy" placeholder="" value="6000">
+						<div class="ui dropdown label" id="uzunlukBirim">
+							<div class="text">mm</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" data-value="1">mm</div>
+								<div class="item" data-value="2">cm</div>
+								<div class="item" data-value="3">mt</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek malzemeSecenek">
+				<div class="s1">MALZEME</div>
+				<div class="s2">
+					<select class="ui dropdown" name="malzeme" id="malzeme">
+						<option value="1" data-yogunluk="8">DEMİR</option>
+						<option value="2" data-yogunluk="8">GALVANİZ</option>
+						<option value="3" data-yogunluk="7.96">PASLANMAZ</option>
+						<option value="4" data-yogunluk="2.75">ALÜMİNYUM</option>
+						<option value="0" data-yogunluk="0">DİĞER</option>
+					</select>
+				</div>
+			</div>
+			<div class="secenek" id="yogunluk">
+				<div class="s1">YOĞUNLUK</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" class="yogunluk" placeholder="">
+						<div class="ui basic label">
+							g/cm<sup>3</sup>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="secenek">
+				<div class="s1">FİYAT</div>
+				<div class="s2">
+					<div class="ui right labeled input">
+						<input type="text" id="fiyat" placeholder="" value="0,00">
+						<div class="ui dropdown label" id="paraBirim">
+							<div class="text">₺ / mt</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<div class="item" data-value="1">₺ / mt</div>
+								<div class="item" data-value="2">$ / mt</div>
+								<div class="item" data-value="3">€ / mt</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sonuc">
+				<div id="loader" class="hesap_sonuc">
+					<div class="loader">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+				<div class="hesaplananDegerler"></div>
+			</div>
+			<div class="hesapla">
+				<div id="butonHesapla" data-yer="yassiSac" class="ui primary submit button huge" style="margin-right: 20px;">Hesapla</div>
+				<div style="display: inline-block;position: relative;top: -2px;">
+					<div class="ui mini   vertical buttons" style="margin-left: 50px;margin-top: 2px;position: absolute;z-index: 1;">
+						<button class="ui icon button i1" command="Up" style="background: rgba(34, 36, 38, 0);padding: 0;"> <i class="up chevron icon"></i> </button>
+						<button class="ui icon button i2" command="Down" style="background: rgba(34, 36, 38, 0);"> <i class="down chevron icon"></i> </button>
+					</div>
+					<div class="ui action right  labeled input" style="width: 82px">
+						<input type="text" id="adet" name="adet_k" value="1">
+						<div class="ui basic label labelAdet" style="color: #666666; width: 100%"> ADET </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js?ver=4.8.2'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type='text/javascript' src="varliklar.java"></script>
+
+<script type='text/javascript' src="menu.java"></script>
+<script type='text/javascript' src="genel.java"></script>
+<script>$( ".kpk_sk" ).dropdown({onChange:function(a){var e=$(this).find(":selected").data("olcu");olcuParcala(e," , ,t<sub>w</sub>=,t<sub>f</sub>=,r<sub>1</sub>=,r<sub>2</sub>="),$("#loader").fadeOut(),$(".sonuc").animate({height:"0"},500),$(".hesaplananDegerler").hide()}});
+	ciftSelect();
+$( ".kpk_se" ).dropdown( {
+onChange: function ( val ) {
+	ciftSelect();
+}
+} );
+setTimeout( function () {
+$( ".kpk_sk" ).dropdown( {
+	onChange: function ( val ) {
+		$( ".olcu  span:nth-child(3)" ).empty();
+		$( ".olcu  span:nth-child(3)" ).append( $( ".kpk_sk" ).find( '.text' ).text() );
+	}
+} );
+}, 200 );
+
+
+$( "#yogunluk" ).hide();
+$( "#malzeme" ).change( function () {
+var deger = $( this ).find( ":selected" ).val();
+if ( deger == 0 ) {
+	$( "#yogunluk" ).fadeIn();
+} else {
+	$( "#yogunluk" ).fadeOut();
+}
+$( "#loader" ).fadeOut();
+$( ".sonuc" ).animate( {
+	height: "0"
+}, 500 );
+$( ".hesaplananDegerler" ).hide();
+} );
+
+$( 'input' ).change( function () {
+$( "#loader" ).fadeOut();
+$( ".sonuc" ).animate( {
+	height: "0"
+}, 500 );
+$( ".hesaplananDegerler" ).hide();
+} );
+
+
+
+
+function ciftSelect() {
+var sayi, kalinlik, agirlik, yer, atama;
+var html = "";
+kalinlik = $( ".kpk_se" ).find( ':selected' ).data( 'kalinlik' );
+agirlik = $( ".kpk_se" ).find( ':selected' ).data( 'agirlik' );
+yer = $( '.kpk_sk' );
+atama = $( ".kpk_sk .menu" );
+var olcu = $( ".kpk_se" ).find( ':selected' ).text();
+yaziParcala( olcu );
+setTimeout( function () {
+	$( ".olcu  span:nth-child(3)" ).empty();
+	$( ".olcu  span:nth-child(3)" ).append( $( ".kpk_sk" ).find( '.text' ).text() );
+}, 300 );
+if ( typeof ( kalinlik ) !== 'undefined' && kalinlik != null ) {
+	var parcala_kalinlik = kalinlik.split( "," );
+	var parcala_agirlik = agirlik.split( "," );
+	for ( sayi = 0; sayi < parcala_kalinlik.length; sayi++ ) {
+		if ( sayi == 0 ) {
+			html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+			yer.dropdown( 'set value', parcala_agirlik[ sayi ] ).dropdown( 'set text', parcala_kalinlik[ sayi ] );
+		} else {
+			html += '<div class="item"  data-value="' + parcala_agirlik[ sayi ] + '">' + parcala_kalinlik[ sayi ] + '</div>';
+		}
+	}
+	atama.html( html );
+}
+}
+
+function formHesaplama() {
+var en, boy, kalinlik, yogunluk, birimFiyat, adet, agirlik, fiyat, USD, EUR, birimAgirlik, birim, disCap, etKalinligi, x_adet, y_adet;
+var htmlz = "";
+yogunluk = $( "#malzeme" ).find( ':selected' ).data( 'yogunluk' );
+if ( yogunluk == "0" ) {
+	yogunluk = $( ".yogunluk" ).val().replace( /\,/g, '.' );
+}
+birimFiyat = $( "#fiyat" ).val().replace( /,/g, '.' );
+adet = $( "#adet" ).val();
+boy = $( "#malzemeBoy" ).val();
+kalinlik = $(".kpk_sk").dropdown("get text");birimAgirlik = $( ".kpk_sk" ).dropdown("get value") / 7.86;$( "#h_ebat" ).text( $( ".kpk_se  option:selected" ).text() + " x " + kalinlik + " " + birimNe );agirlik = birimAgirlik * yogunluk * boy / birimBolme;		var nebu = "tip2";
+var fiyatTipi = "metre";
+USD = $( "#usd" ).text().replace( /\,/g, '.' );
+EUR = $( "#eur" ).text().replace( /\,/g, '.' );
+
+if (fiyatTipi == "metre") 
+{
+	console.log(fiyatTipi)
+	if ( kur == "1" ) {
+		fiyat = boy / birimBolme * birimFiyat;
+	}
+	if ( kur == "2" ) {
+		fiyat = boy / birimBolme * birimFiyat * 19;
+	}
+	if ( kur == "3" ) {
+		fiyat = boy / birimBolme * birimFiyat * 20;
+	}
+} 
+/** kodun amacını çöz
+/***else 
+{
+	if ( kur == "1" ) {
+		fiyat = agirlik * birimFiyat;
+	}
+	if ( kur == "2" ) {
+		fiyat = agirlik * birimFiyat * 7;
+	}
+	if ( kur == "3" ) {
+		fiyat = agirlik * birimFiyat * 8;
+	}
+}**/
+
+if ( nebu != "tip6" ) {
+	$( "#h_cinsi" ).text( "PROFİL" );
+} else {
+	$( "#h_cinsi" ).text( "SAC" );
+};
+
+$( "#h_malzeme" ).text( $( "#malzeme option:selected" ).text() );
+$( "#h_adet" ).text( adet );
+$( "#h_agirlik" ).text( agirlik );
+$( "#h_fiyat" ).text( fiyat );
+if ( adet > 1 ) {
+	htmlz += '<div class="t1">';
+	htmlz += '<div class="k1">';
+	htmlz += '<div class="t2">';
+	htmlz += '<div class="i0">' + numeral( agirlik ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+	htmlz += '<div class="i1">' + numeral( ( agirlik * adet ) ).format( '0,0.00' ) + ' KG</div>';
+	htmlz += '<div class="i2">AĞIRLIK</div>';
+	htmlz += '</div>';
+	htmlz += '</div>';
+	htmlz += '<div class="k1">';
+	htmlz += '<div class="t2 son">';
+	htmlz += '<div class="i0">' + numeral( fiyat ).format( '0,0.00' ) + ' x ' + adet + '</div>';
+	htmlz += '<div class="i1">' + numeral( ( fiyat * adet ) ).format( '0,0.00 $' ) + '</div>';
+	htmlz += '<div class="i2">FİYAT</div>';
+	htmlz += '</div>';
+	htmlz += '</div>';
+	htmlz += '</div>';
+	htmlz += '<div class="ekle_alan"><button class="ui primary  tiny button" style="background:#fd8009 !important" id="listemeEkle" onclick="addToCart();return false;"> Listeme Ekle</button></div>';
+} else {
+	htmlz += '<div class="t1">';
+	htmlz += '<div class="k1">';
+	htmlz += '<div class="t2">';
+	htmlz += '<div class="i1">' + numeral( agirlik ).format( '0,0.00' ) + ' KG</div>';
+	htmlz += '<div class="i2">AĞIRLIK</div>';
+	htmlz += '</div>';
+	htmlz += '</div>';
+	htmlz += '<div class="k1">';
+	htmlz += '<div class="t2 son">';
+	htmlz += '<div class="i1">' + numeral( fiyat ).format( '0,0.00 $' ) + '</div>';
+	htmlz += '<div class="i2">FİYAT</div>';
+	htmlz += '</div>';
+	htmlz += '</div>';
+	htmlz += '</div>';
+	htmlz += '<div class="ekle_alan"><button class="ui primary  tiny button" style="background:#fd8009 !important" id="listemeEkle" onclick="addToCart();return false;"> Listeme Ekle</button></div>';
+}
+setTimeout( function () {
+	$( '.hesaplananDegerler' ).html( htmlz );
+}, 1000 );
+}</script>
+
+</body>
+
+</html>
